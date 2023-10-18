@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap');
+
+body{
+    background-color: hsl(222, 26%, 31%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+.outer-container{
+    width: 21rem;
+}
+
+.screen{
+    height: 100px;
+    width: 21rem;
+    background-color: hsl(224, 36%, 15%);
+    border-radius: 5px;
+    padding: 1rem;
+    box-sizing: border-box;    
+    display: flex;
+    flex-direction: column;
+    gap: 1px
+}
+
+.screen>div{
+    /* border: 1px solid wheat; */
+    display: flex;
+    justify-content: end;
+    color: #cbc9c9;
+}
+#calculate{
+    height: 35%;
+    font-size: 1rem;
+    /* letter-spacing: 8px; */
+}
+#result{
+    height: 65%;
+    font-size: 2rem;
+}
+
+
+/* keys */
+
+.keys{
+    margin-top: 1rem;
+    height: 16rem;
+    width: 21rem;
+    background-color: hsl(223, 31%, 20%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.keys > div {
+    text-transform: uppercase;
+    width: 4em;
+    height: 2em;
+    background-color: #cbc9c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+div[data-val="del"], div[data-val="reset"] {
+    color: white;
+    background-color: hsl(225, 21%, 49%);
+}
+div[data-val="="] {
+    color: white;
+    background-color: hsl(6, 63%, 50%);
+}
+
+div[data-val="="], div[data-val="reset"] {
+    width: 9rem;
+}
+
+/* on hovering */
+
+.keys>div:hover{
+    cursor: pointer;
+    background-color: #e8e6e6;
+}
+
+div[data-val="del"]:hover, div[data-val="reset"]:hover {
+    background-color: hsl(224, 20%, 41%);
+}
+div[data-val="="]:hover {
+    background-color: hsl(6, 64%, 43%);
+}
+
+
