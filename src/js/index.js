@@ -1,6 +1,6 @@
 import '../styles/app.css'
 
-const calculateScreen = document.querySelector('#calculate')
+const display = document.querySelector('#calculate')
 
 const Keys = document.querySelectorAll('.addToScreen')
 const reset = document.querySelector('#reset')
@@ -14,22 +14,35 @@ function ifNumber(key){
 }
 
 Keys.forEach(key =>(key.addEventListener('click', ()=>{
-    if(calculateScreen.textContent==='' && !ifNumber(key)){
-        calculateScreen.textContent = 0
+    if(display.textContent==='' && !ifNumber(key)){
+        display.textContent = 0
     }
-    calculateScreen.textContent += key.getAttribute('data-val')
+    display.textContent += key.getAttribute('data-val')
+    calculate()
 })))
 
 reset.addEventListener('click', ()=>{
-    calculateScreen.textContent = ''
+    display.textContent = ''
     result.textContent = ''
 })
 
 deleteButton.addEventListener('click', ()=>{
     console.log('del')
-    calculateScreen.textContent = calculateScreen.textContent.slice(0,calculateScreen.textContent.length-1)
+    display.textContent = display.textContent.slice(0,display.textContent.length-1)
+    calculate()
 })
 
 equalTo.addEventListener('click', ()=>{
-    result.textContent = eval(calculateScreen.textContent)
+    calculate()
+    display.textContent = result.textContent
+    result.textContent = ''
 })
+
+function calculate(){
+    if(isNaN(display.textContent.slice(-1))||display.textContent.length===1){
+        result.textContent = ''
+    }
+    else{
+        result.textContent = eval(display.textContent)
+    }
+}

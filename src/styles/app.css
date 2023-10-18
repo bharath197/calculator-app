@@ -31,13 +31,13 @@ body{
     color: #cbc9c9;
 }
 #calculate{
-    height: 35%;
-    font-size: 1rem;
+    height: 65%;
+    font-size: 2rem;
     /* letter-spacing: 8px; */
 }
 #result{
-    height: 65%;
-    font-size: 2rem;
+    height: 35%;
+    font-size: 1rem;
 }
 
 
